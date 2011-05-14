@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>10 anos das licenciaturas</title>
+  <script ></script>
+</head>
+<body>
+  
+  {% if success %}
+    <h1>Inscrição feita com sucesso!</h1>
+  {% endif %}
+  
+  <form method="POST" action="/">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+  </form>
+  
+</body>
+</html>

@@ -1,10 +1,14 @@
 body {
   background-color: #69b92d;
   margin: 45px;
+  font-family: sans-serif;
 }
 
 div.content {
   background-color: #FFFFFF;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
 }
 
 #iff {
@@ -28,6 +32,18 @@ div.content {
 
 .inscricoes {
   padding: 10px;
+  font-size: medium;
+}
+
+.field_title {
+  font-weight: bold;
+}
+
+.help_text {
+  font-size: small;
+  font-style: italic;
+  margin: 0 0 0 20px;
+  padding: 0;
 }
 
 #other_choice, #poster_title, #poster_autors, #poster_leader, #poster_institution, #poster_abstract {
@@ -39,4 +55,17 @@ ul.errorlist {
   margin-top: 0;
   padding-left: 15px;
   color: red;
+  font-size: small;
+}
+
+input[type="text"] {
+  border-color: #7C7C7C #C3C3C3 #DDDDDD;
+  border-style: solid;
+  border-width: 1px;
+  width: 400px;
+}
+
+input[type="submit"] {
+  margin-top: 30px;
+  width: 300px;
 }

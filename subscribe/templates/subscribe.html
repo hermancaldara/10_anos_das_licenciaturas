@@ -28,9 +28,14 @@
       {% csrf_token %}
       {% for field in form %}
         <div id="{{ field.name }}">
-          {{ field.errors }}
-          {{ field.label_tag }}:<br>
-          {{ field }}<br><br>
+          <p class="field_title">{{ field.label_tag }}:</p>
+          {% if field.errors %}
+            {{ field.errors }}
+          {% endif %}
+          {% if field.help_text %}
+            <p class="help_text">{{ field.help_text }}</p>
+          {% endif %}
+          {{ field }}
         </div>
       {% endfor %}
       <input type="submit">

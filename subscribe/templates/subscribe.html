@@ -1,19 +1,41 @@
 <html>
 <head>
-  <title>10 anos das licenciaturas</title>
-  <script ></script>
+  <title>10 anos das licenciaturas - Instituto Federal Fluminense</title>
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/site.css">
+  <script type="text/javascript" src="{{ MEDIA_URL }}/jquery.js"></script>
+  <script type="text/javascript" src="{{ MEDIA_URL }}/site.js"></script>
 </head>
 <body>
-  
-  {% if success %}
-    <h1>Inscrição feita com sucesso!</h1>
-  {% endif %}
-  
-  <form method="POST" action="/">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit">
-  </form>
-  
+  <div class="content">
+    {% if success %}
+      <h1>Inscrição feita com sucesso!</h1>
+    {% endif %}
+    <div id="iff">
+      <img src="{{ MEDIA_URL }}/iff.gif" alt="Instituto Federal Fluminense" title="Instituto Federal Fluminense"/><br>
+    </div>
+    <div id="logos">
+      <img src="{{ MEDIA_URL }}/logo.png" alt="10 anos das licenciaturas" title="10 anos das licenciaturas">
+      <img src="{{ MEDIA_URL }}/prodocencia.png" alt="Prodocência" title="Prodocência">
+      <img src="{{ MEDIA_URL }}/capes.png" alt="CAPES" title="CAPES">
+    </div>
+    <div id="info">
+      <h2>SEMANA DAS LICENCIATURAS</h2>
+      <h3>08/09/10 DE JUNHO DE 2011<h3>
+      <p>Ficha de Inscrição</p>
+    </div>
+    <div class="inscricoes">
+    <form method="POST" action="/">
+      {% csrf_token %}
+      {% for field in form %}
+        <div id="{{ field.name }}">
+          {{ field.errors }}
+          {{ field.label_tag }}:<br>
+          {{ field }}<br><br>
+        </div>
+      {% endfor %}
+      <input type="submit">
+    </form>
+    </div>
+  </div>
 </body>
 </html>

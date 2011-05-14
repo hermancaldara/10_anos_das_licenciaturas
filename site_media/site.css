@@ -1,0 +1,42 @@
+body {
+  background-color: #69b92d;
+  margin: 45px;
+}
+
+div.content {
+  background-color: #FFFFFF;
+}
+
+#iff {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#logos {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#logos img {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+#info {
+  text-align: center;
+}
+
+.inscricoes {
+  padding: 10px;
+}
+
+#other_choice, #poster_title, #poster_autors, #poster_leader, #poster_institution, #poster_abstract {
+  display: none;
+}
+
+ul.errorlist {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 15px;
+  color: red;
+}

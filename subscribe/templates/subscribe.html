@@ -33,10 +33,6 @@
               <span class="help_text">({{ field.help_text }})</span>
             {% endif %}
           </p>
-          
-<!--          {% if field.help_text %}-->
-<!--            <span class="help_text">{{ field.help_text }}</span>-->
-<!--          {% endif %}-->
           {% if field.errors %}
             {{ field.errors }}
           {% endif %}
@@ -46,6 +42,12 @@
       <input type="submit">
     </form>
     </div>
+  </div>
+  <div id="footer">
+    <p>
+      <a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangomade124x25.gif" border="0" alt="Made with Django." title="Made with Django." /></a>
+      <a href="http://nsi.iff.edu.br" target="_blank"><img src="http://nsi.iff.edu.br/site_media/images/base/logo.png" title="NSI" alt="NSI" width="102" height="40" border="0"/></a>
+    </p>
   </div>
 </body>
 </html>

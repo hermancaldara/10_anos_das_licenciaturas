@@ -16,6 +16,11 @@ POSTER_CHOICES = (
 
 
 class Entry(models.Model):
+  
+    class Meta:
+        verbose_name = 'Inscrição'    
+        verbose_name_plural = 'Inscrições'
+    
     name = models.CharField(max_length=100, verbose_name="Nome")
     people_type = models.CharField(
         max_length=100,
@@ -33,14 +38,19 @@ class Entry(models.Model):
         max_length=100, verbose_name="Área de Atuação"
     )
     institution = models.CharField(max_length=100, verbose_name="Instituição")
-    email = models.EmailField(max_length=100, verbose_name="Email")
+    email = models.EmailField(
+        max_length=100,
+        verbose_name="Email",
+        unique=True
+    )
     adress = models.CharField(max_length=100, verbose_name="Endereço")
     phone = models.CharField(
-        max_length=10, verbose_name="Telefone", help_text="Exemplo: 2227260000")
+        max_length=12)
     mobile = models.CharField(
-        max_length=10, verbose_name="Celular", help_text="Exemplo: 2299991234")
+        max_length=12,)
     cpf = models.CharField(
-        max_length=11, verbose_name="CPF", help_text="Exemplo: 12345678910"
+        max_length=14,
+        unique=True,
     )
     rg = models.CharField(max_length=100, verbose_name="RG")
     poster_presentation = models.CharField(
@@ -48,6 +58,7 @@ class Entry(models.Model):
         choices=POSTER_CHOICES,
         default='nao',
         verbose_name="Apresentação de Pôsteres",
+        help_text="Submissão de pôsteres até dia 27 de maio"
     )
     poster_title = models.CharField(
         max_length=100, blank=True, null=True, verbose_name="Título do Trabalho"

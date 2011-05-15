@@ -18,10 +18,17 @@ POSTER_CHOICES = (
 class Entry(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nome")
     people_type = models.CharField(
-        max_length=100, choices=PEOPLE_CHOICES, verbose_name="Status"
+        max_length=100,
+        choices=PEOPLE_CHOICES,
+        verbose_name="Status",
+        default=None,
     )
     other_choice = models.CharField(
-        max_length=100, blank=True, null=True, verbose_name="Outro") 
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Outro",
+    ) 
     operation_area = models.CharField(
         max_length=100, verbose_name="Área de Atuação"
     )
@@ -59,5 +66,5 @@ class Entry(models.Model):
     )
     
     def __unicode__(self):
-        return '%s (%s)' % (self.name, self.cpf)
+        return '%s - (%s)' % (self.name, self.cpf)
 

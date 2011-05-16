@@ -5,9 +5,9 @@ from django.contrib.localflavor.br.forms import BRCPFField, BRPhoneNumberField
 
 class EntryForm(forms.ModelForm):
     
-    cpf = BRCPFField(help_text="Exemplo: XXX.XXX.XXX-VD")
-    phone = BRPhoneNumberField(help_text="Exemplo: XX-XXXX-XXXX")
-    mobile = BRPhoneNumberField(help_text="Exemplo: XX-XXXX-XXXX")
+    phone = BRPhoneNumberField(label="Telefone", help_text="Exemplo: XX-XXXX-XXXX")
+    mobile = BRPhoneNumberField(label="Celular", help_text="Exemplo: XX-XXXX-XXXX")
+    cpf = BRCPFField(label="CPF", help_text="Exemplo: XXX.XXX.XXX-VD")
     
     class Meta:
         model = Entry

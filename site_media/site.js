@@ -1,4 +1,4 @@
-function onSelectChange(){
+function manage_poster_fields(){
   if ($('#id_poster_presentation option:selected').val() == 'sim') {
     $('#poster_title').css('display', 'block');
     $('#poster_autors').css('display', 'block');
@@ -15,7 +15,7 @@ function onSelectChange(){
   }
 }
 
-function xunda(){
+function manage_people_type(){
   if ($('#id_people_type option:selected').val() == 'outro') {
     $('#other_choice').css('display', 'block');
   }
@@ -25,6 +25,6 @@ function xunda(){
 }
 
 $(function() {
-  $("#id_poster_presentation").change(onSelectChange);
-  $("#id_people_type").change(xunda);
+  $("#id_poster_presentation").change(manage_poster_fields);
+  $("#id_people_type").change(manage_people_type);
 });

@@ -28,3 +28,9 @@ $(function() {
   $("#id_poster_presentation").change(manage_poster_fields);
   $("#id_people_type").change(manage_people_type);
 });
+
+jQuery(function($){
+   $("#id_phone").mask("(99) 9999-9999");
+   $("#id_mobile").mask("(99) 9999-9999");
+   $("#id_cpf").mask("999.999.999-99");
+});
